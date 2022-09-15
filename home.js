@@ -50,18 +50,61 @@ function sudoku(obj,x,y){
     }
     return false;
 }
-var obj={arr:[[5,3,0,0,7,0,0,0,0],
-[6,0,0,1,9,5,0,0,0],
-[0,9,8,0,0,0,0,6,0],
-[8,0,0,0,6,0,0,0,3],
-[4,0,0,8,0,3,0,0,1],
-[7,0,0,0,2,0,0,0,6],
-[0,6,0,0,0,0,2,8,0],
-[0,0,0,4,1,9,0,0,5],
-[0,0,0,0,8,0,0,7,9]]};
-if(sudoku(obj,0,0)){
-    console.log(obj.arr);
-}
-else{
-    console.log("not posible");
-}
+// var obj={arr:[[5,3,0,0,7,0,0,0,0],
+// [6,0,0,1,9,5,0,0,0],
+// [0,9,8,0,0,0,0,6,0],
+// [8,0,0,0,6,0,0,0,3],
+// [4,0,0,8,0,3,0,0,1],
+// [7,0,0,0,2,0,0,0,6],
+// [0,6,0,0,0,0,2,8,0],
+// [0,0,0,4,1,9,0,0,5],
+// [0,0,0,0,8,0,0,7,9]]};
+// if(sudoku(obj,0,0)){
+//     console.log(obj.arr);
+// }
+// else{
+//     console.log("not posible");
+// }
+
+var obj={arr:[[0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0]]};
+// var obj={arr:[[],[],[],[],[],[],[],[],[]]}
+
+var textBox=document.querySelectorAll(".cont input");
+var solve=document.querySelector(".run");
+solve.addEventListener("click",()=>{
+    let count=0;
+    textBox.forEach((ele)=>{
+        let val=ele.value;
+        // console.log(val);
+        let i=Math.floor(count/9);
+        console.log(Math.floor(i)+" "+count%9);
+        if(val!=""){
+            obj.arr[i][count%9]=parseInt(val);
+        }
+        else{
+            obj.arr[i][count%9]=0;
+        }
+        // console.log(obj.arr);
+        count++;   
+    });
+    if(sudoku(obj,0,0)){
+        console.log(obj.arr);
+        let count=0;
+        textBox.forEach((ele)=>{
+            ele.value=obj.arr[Math.floor(count/9)][count%9].toString();
+            count++;
+        })
+    }
+    else{
+        console.log("not posible");
+    }
+    // console.log(obj.arr);
+})
