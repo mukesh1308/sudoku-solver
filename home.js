@@ -87,6 +87,7 @@ solve.addEventListener("click",()=>{
         let i=Math.floor(count/9);
         console.log(Math.floor(i)+" "+count%9);
         if(val!=""){
+            ele.classList.toggle("active");
             obj.arr[i][count%9]=parseInt(val);
         }
         else{
@@ -108,3 +109,10 @@ solve.addEventListener("click",()=>{
     }
     // console.log(obj.arr);
 })
+var reset=document.querySelector(".reset")
+reset.addEventListener("click",()=>{
+    textBox.forEach((ele)=>{
+        ele.value="";
+        ele.classList.remove("active");
+    })
+});
