@@ -1,0 +1,44 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: monospace;
+}
+html{
+    font-size: 10px;
+}
+body{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.cont{
+    display: grid;
+    grid-template-columns: repeat(9,6rem);
+    grid-auto-rows: 6rem;
+
+}
+.cont input{
+    text-align: center;
+    font-size: 3rem;
+}
+.cont input:nth-child(odd){
+    background-color: rgba(0, 139, 139, 0.7);
+}
+.cont input:nth-child(even){
+    background-color: rgba(0, 255, 255, 0.7);
+}
+.side-border{
+    border-right: 5px solid black;
+}
+.buttom-border{
+    border-bottom: 5px solid black;
+}
+.cont .active {
+    background-color: black !important;
+    color:white !important;
+    border:1px solid white
+}
