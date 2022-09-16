@@ -42,3 +42,29 @@ body{
     color:white !important;
     border:1px solid white
 }
+.buttons{
+    width: 54rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+.buttons button{
+    font-size: 3rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius:2rem ;
+}
+.buttons .run,.buttons .run:visited{
+    background-color: green;
+    color: white;
+}
+.buttons .run:hover,.buttons .run:active{
+    background-color: darkgreen;
+}
+.buttons .reset,.buttons .reset:visited{
+    background-color: lightcoral;
+    color: black;
+}
+.buttons .reset:hover,.buttons .reset:active{
+    background-color: darksalmon;
+}
