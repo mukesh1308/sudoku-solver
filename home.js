@@ -97,7 +97,7 @@ solve.addEventListener("click",()=>{
         count++;   
     });
     if(sudoku(obj,0,0)){
-        console.log(obj.arr);
+        // console.log(obj.arr);
         let count=0;
         textBox.forEach((ele)=>{
             ele.value=obj.arr[Math.floor(count/9)][count%9].toString();
@@ -116,3 +116,24 @@ reset.addEventListener("click",()=>{
         ele.classList.remove("active");
     })
 });
+var err_text=document.querySelector(".err-text");
+textBox.forEach((ele)=>{
+    ele.addEventListener("change",()=>{
+        console.log(ele.value);
+        if(!(ele.value>=1 && ele.value<=9)){
+            console.log("added")
+            ele.classList.add("error");
+            if(ele.value<1){
+                err_text.innerHTML="the number must be grater then 1";
+            }
+            else{
+                err_text.innerHTML="the number must be less then 9";
+            }
+        }
+        else{
+            console.log("removed")
+            ele.classList.remove("error")
+            err_text.innerHTML="";
+        }
+    })
+})
