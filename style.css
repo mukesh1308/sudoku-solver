@@ -68,3 +68,11 @@ body{
 .buttons .reset:hover,.buttons .reset:active{
     background-color: darksalmon;
 }
+.error{
+    background-color: red !important;
+}
+.err-text{
+    height: 3rem;
+    color: red;
+    font-size: 2rem;
+}
